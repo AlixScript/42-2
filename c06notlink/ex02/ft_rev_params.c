@@ -6,17 +6,15 @@
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:50:14 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/22 12:55:12 by ldalibar         ###   ########lyon.fr   */
+/*   Updated: 2022/07/22 14:09:43 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include <unistd.h>
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -27,36 +25,18 @@ int ft_putstr(char *str)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
-	
+	int	j;
+
+	j = argc - 1;
 	i = argc;
 	while (i > 1)
 	{
-		printf("i = %d\n", i);
-		//ft_putstr(argv[i]);
-		//write(1, "\n", 1);
+		ft_putstr(argv[j]);
+		write(1, "\n", 1);
 		i--;
+		j--;
 	}
-
-	int x;
-	x = 1;
-	while (x < argc)
-	{
-		ft_putstr(argv[x]);
-		write(1, "\n", 1);
-		x++;
-	}
-
-
-	/*
-	i = 1;
-	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		write(1, "\n", 1);
-		i++;
-	}
-	*/
 }
