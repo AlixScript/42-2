@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 04:13:58 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/27 04:14:08 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/26 13:06:44 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/27 07:41:08 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
-{
-	int	i;
+#include <stdlib.h>
 
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+	int		len;
+	int		i;
+
+	len = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (src[len])
+		len++;
+	dest = malloc(sizeof(src) * len + 1);
+	if (dest == NULL)
+		return (0);
+	while (src[i])
 	{
-		if (str[i] >= 65 && str[i] <= 90)
-		{
-			str[i] += 32;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (str);
+	free(dest);
+	return (dest);
 }

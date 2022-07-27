@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 04:13:58 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/27 04:14:08 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/27 04:22:31 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/27 05:21:45 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strlowcase(char *str)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	size = 0;
+	while (src[i] != '\0')
 	{
-		if (str[i] >= 65 && str[i] <= 90)
-		{
-			str[i] += 32;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (str);
+	size = i;
+	dest[i] = '\0';
+	return (size);
 }
