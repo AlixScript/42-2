@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 11:52:38 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/27 23:17:38 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/20 07:38:02 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/28 16:38:57 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_fibonacci(int index)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] != '\0')
-			j++;
-		if (to_find[j] == '\0')
-			return (&str[i]);
-		i++;
-	}
-	return ((void *) 0);
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 07:33:39 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/21 15:46:05 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/20 07:38:55 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/28 16:39:39 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
 	int	i;
 	int	result;
 
-	i = 2;
-	result = 1;
-	if (nb <= 0)
-		return (0);
-	while (i <= nb)
+	i = 0;
+	while (i < 46341 && nb > 0)
 	{
-		result = result * i;
+		result = i * i;
+		if (result == nb)
+			return (i);
+		if (result > nb)
+			return (0);
 		i++;
 	}
-	return (result);
+	return (0);
 }

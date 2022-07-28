@@ -6,7 +6,7 @@
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 14:42:55 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/25 15:18:19 by ldalibar         ###   ########lyon.fr   */
+/*   Updated: 2022/07/28 16:41:13 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,17 @@
 int	ft_is_prime(int nb)
 {
 	int	i;
-	int result;
+	int	result;
 
 	i = 2;
-	while (i < nb)
+	if (nb < 2)
+		return (0);
+	while (i < nb && i < 46341)
 	{
-		result = i * i;
-
-		//if (result == nb)
-		printf("result = %d, i = %d\n", result, i);
+		result = nb % i;
+		if (result == 0)
+			return (0);
 		i++;
 	}
-	return (0);	
-}
-
-int main()
-{
-	printf("%d", ft_is_prime(7));
+	return (1);
 }

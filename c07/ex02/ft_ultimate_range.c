@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 07:38:55 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/25 13:55:52 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/27 15:13:39 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/27 15:15:02 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	i;
-	int	result;
+int	ft_ultimate_range(int **range, int min, int max)
 
-	i = 0;
-	while (i <= 9 && nb > 0)
-	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		if (result > nb)
-			return (0);
-		i++;
-	}
-	return (nb);
-}

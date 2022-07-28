@@ -6,7 +6,7 @@
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 13:06:44 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/27 07:41:08 by ldalibar         ###   ########lyon.fr   */
+/*   Updated: 2022/07/27 14:51:24 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (src[len])
 		len++;
-	dest = malloc(sizeof(src) * len + 1);
+	dest = (char *) malloc(sizeof(char) * (len + 1));
 	if (dest == NULL)
 		return (0);
 	while (src[i])
@@ -30,6 +30,6 @@ char	*ft_strdup(char *src)
 		dest[i] = src[i];
 		i++;
 	}
-	free(dest);
+	dest[i] = '\0';
 	return (dest);
 }

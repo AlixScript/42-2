@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/27 07:48:14 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/27 09:03:07 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/20 07:35:59 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/28 16:33:03 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*ft_range(int min, int max)
+int	ft_iterative_power(int nb, int power)
 {
-	char *src = "text";
-	char *copy = NULL;
-	int i;
-	int len;
-	//limite de variables
-	
-	i = 0;
-	while(src[i])
-		i++;
-	len = i;
-	copy = malloc(sizeof());
-}
+	int	i;
+	int	result;
 
-int main()
-{
-	ft_range(6, 10);
-	return (0);
+	i = 0;
+	result = 1;
+	if ((nb == 0 && power == 0) || power == 0)
+		return (1);
+	if (nb == 0 || power < 0)
+		return (0);
+	while (i < power)
+	{
+		result = result * nb;
+		i++;
+	}
+	return (result);
 }

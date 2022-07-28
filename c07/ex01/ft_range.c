@@ -1,38 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldalibar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/20 07:35:59 by ldalibar          #+#    #+#             */
-/*   Updated: 2022/07/21 14:48:51 by ldalibar         ###   ########lyon.fr   */
+/*   Created: 2022/07/27 07:48:14 by ldalibar          #+#    #+#             */
+/*   Updated: 2022/07/27 23:49:08 by ldalibar         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int	i;
-	int	result;
+#include <stdlib.h>
 
-	i = 1;
-	if (power < 0 || nb < 0)
+#include <stdio.h>
+
+int	*ft_range(int min, int max)
+{
+	int	*stock;
+	int	i;
+	int	len;
+
+	len = max - min;
+	i = 0;
+	if (min >= max)
+		return (NULL);
+	stock = (int *) malloc(sizeof(int) * len + 1);
+	if (stock == NULL)
 		return (0);
-	if ((power == 0 && nb == 0) || power == 0)
-		return (1);
-	while (i <= power)
+	while (stock[i])
+		write(1, &stock, 1);
+	/*
+	printf("%d\n", len);
+
+	while (i < len)
 	{
-		if (i == 1)
-		{
-			result = nb;
-			i++;
-		}
-		while (i > 1 && i <= power)
-		{
-			result = result * nb;
-			i++;
-		}
-		return (result);
+		stock[i] = i;
+		//printf("i = %d\n", stock);
+		i++;
 	}
+	printf("%d\n", *stock);
+	*/
+	return (0);
+}
+
+int main()
+{
+	ft_range(5, 10);
 	return (0);
 }
